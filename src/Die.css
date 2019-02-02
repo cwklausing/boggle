@@ -1,0 +1,19 @@
+.die {
+  border: 1px solid black;
+  padding: 3px;
+  background-color: #cacaca;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.letter {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #fff;
+  padding: 3px;
+  width: 75px;
+  height: 75px;
+  text-align: center;
+}
