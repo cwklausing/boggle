@@ -22,24 +22,49 @@ const dice = [
 
 class App extends Component {
   generateBoard = (dice: string[][]) => {
-    return this.shuffleArray(dice).map((dieArray, index) => {
+    const shuffledArray = this.shuffleArray(dice).map((dieArray) => {
       const randomDiceRoll = Math.floor(Math.random() * 5)
       return dieArray[randomDiceRoll]
     })
+    
+    return this.formatBoard(shuffledArray)
+  }
+  
+  formatBoard = (array: any[]) => {
+    const oldArray = [...array]
+    let arraySquare = Math.sqrt(array.length)
+    // formats the array into a square matrix
+    let formattedArray: string[][] = []
+    for (let i = 0; i < arraySquare; i++) {
+      formattedArray.push([...oldArray.splice(0, arraySquare)])
+    }
+
+    return formattedArray;
   }
 
   shuffleArray = (array: string[][]) => {
-    for (let i = array.length - 1; i > 0; i--) {
+    let newArray = [ ...array]
+
+    // shuffles the array
+    for (let i = newArray.length - 1; i > 0; i--) {
         const j = Math.floor(Math.random() * (i + 1));
-        [array[i], array[j]] = [array[j], array[i]];
+        [newArray[i], newArray[j]] = [newArray[j], newArray[i]];
     }
-    return array;
+    return newArray;
+  }
+
+  isSquareArray = (array: any[]) => {
+    return Number.isInteger(Math.sqrt(array.length))
   }
 
   render() {
     return (
       <div className="App">
-        <Board dice={this.generateBoard(dice)} />
+        {this.isSquareArray(dice) ? (
+          <Board dice={this.generateBoard(dice)} />
+        ) : (
+          <div>The number of dice provided is not a square number</div>
+        )}
       </div>
     );
   }
