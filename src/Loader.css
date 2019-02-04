@@ -1,0 +1,31 @@
+@keyframes loading {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.loader-wrap {
+  position: fixed;
+  right: 50%;
+  top: 50vh;
+  transform: translate(50%, -50%);
+}
+
+.loader {
+  animation: 2s loading infinite;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-content: space-between;
+  width: 100px;
+  height: 100px;
+}
+
+.loader .letter {
+  width: 30px;
+  height: 30px;
+}

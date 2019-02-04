@@ -10,11 +10,12 @@ export interface IDie {
 
 interface IProps {
   die: IDie
-  clickHandler: (die: IDie) => void
+  clickHandler?: (die: IDie) => void
+  className?: string
 }
 
-const Die = ({ die, clickHandler }: IProps) => (
-  <div className="die" onClick={() => clickHandler(die)} >
+const Die = ({ die, clickHandler = () => null, className }: IProps) => (
+  <div className={`die ${className}`} onClick={() => clickHandler(die)} >
     <span className="letter">
       {die.letter}
     </span>

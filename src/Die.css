@@ -1,10 +1,20 @@
 .die {
   border: 1px solid black;
+  border-radius: 4px;
+  cursor: pointer;
   padding: 3px;
   background-color: #cacaca;
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.die.active {
+  background-color: #598a64;
+}
+
+.die.active .letter {
+  background-color: #64b967;
 }
 
 .letter {

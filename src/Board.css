@@ -7,5 +7,10 @@
   height: 400px;
   padding: 20px;
   background-color: #5a61c7;
-  margin: 200px auto;
+}
+
+.board-wrap {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
 }

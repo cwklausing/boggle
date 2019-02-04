@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Board from './Board'
+import Game from './Game'
 
 const dice = [
   ['A', 'A', 'E', 'E', 'G', 'N'],
@@ -21,16 +21,16 @@ const dice = [
 ];
 
 class App extends Component {
-  generateBoard = (dice: string[][]) => {
+  generateDice = (dice: string[][]) => {
     const shuffledArray = this.shuffleArray(dice).map((dieArray) => {
       const randomDiceRoll = Math.floor(Math.random() * 5)
       return dieArray[randomDiceRoll]
     })
     
-    return this.formatBoard(shuffledArray)
+    return this.formatDiceArray(shuffledArray)
   }
   
-  formatBoard = (array: any[]) => {
+  formatDiceArray = (array: any[]) => {
     const oldArray = [...array]
     let arraySquare = Math.sqrt(array.length)
     // formats the array into a square matrix
@@ -61,7 +61,7 @@ class App extends Component {
     return (
       <div className="App">
         {this.isSquareArray(dice) ? (
-          <Board dice={this.generateBoard(dice)} />
+          <Game dice={this.generateDice(dice)} />
         ) : (
           <div>The number of dice provided is not a square number</div>
         )}

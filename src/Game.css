@@ -1,0 +1,35 @@
+.game-wrap {
+  display: flex;
+  justify-content: center;
+  margin: 200px 0 0;
+}
+
+.button {
+  border: 2px solid black;
+  margin-top: 20px;
+  padding: 15px 30px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 18px;
+  margin-right: 5px;
+}
+
+.button.add-word {
+  background-color: #6bc96b;
+}
+
+.toast {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  transform: translateY(-100%);
+  transition: 400ms transform ease-in-out;
+  background-color: #b63b46;
+  padding: 10px 20px;
+  color: white;
+  font-size: 18px;
+}
+
+.toast.active {
+  transform: translateY(0%);
+}

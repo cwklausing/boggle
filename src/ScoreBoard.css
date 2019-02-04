@@ -1,0 +1,24 @@
+.scoreboard {
+  width: 200px;
+}
+
+.scoreboard td {
+  text-align: center;
+}
+
+.scoreboard .total {
+  font-weight: bold;
+}
+
+.scoreboard tbody {
+  display: block;
+  max-height: 390px;
+  width: 100%;
+  overflow: auto;
+}
+
+.scoreboard thead, tbody, tfoot, tr {
+  display: table;
+  width: 100%;
+  table-layout: fixed;
+}
