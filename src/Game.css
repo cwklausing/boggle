@@ -15,7 +15,11 @@
 }
 
 .button.add-word {
-  background-color: #6bc96b;
+  background-color: #64b967;
+}
+
+.button.add-word.disabled {
+  background-color: #8b8b8b;
 }
 
 .toast {

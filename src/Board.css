@@ -1,12 +1,15 @@
-.board {
+.board-border {
   border: 2px solid black;
+  padding: 20px;
+  background-color: #51558e;
+}
+
+.board {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-template-rows: 1fr 1fr 1fr 1fr;
-  width: 400px;
-  height: 400px;
-  padding: 20px;
-  background-color: #5a61c7;
+  grid-column-gap: 3px;
+  grid-row-gap: 3px;
 }
 
 .board-wrap {

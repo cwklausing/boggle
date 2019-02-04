@@ -141,28 +141,34 @@ class Game extends Component<IProps, IState> {
   }
 
   render() {
-    const { isLoading } = this.state
+    const { isLoading, isError, toast, selectedDice, playerList } = this.state
+    const { dice} = this.props
+
     return (
       <Fragment>
-        <div className={`toast ${this.state.toast.show ? 'active' : ''}`}>{this.state.toast.message}</div>
+        <div className={`toast ${toast.show ? 'active' : ''}`}>{toast.message}</div>
         { isLoading && <Loader /> }
-        { !isLoading && this.state.isError && (
+        { !isLoading && isError && (
           <p>Whoops! Something went wrong. Check console for details.</p>
         )}
-        { !this.state.isError && !isLoading && (
+        { !isError && !isLoading && (
           <div className="game-wrap">
             <div className="board-wrap">
               <Board
-                dice={this.props.dice}
+                dice={dice}
                 dieClickHandler={this.dieClickHandler}
-                selectedDice={this.state.selectedDice} 
+                selectedDice={selectedDice} 
               />
               <div className="buttons">
-                <button className="button add-word" onClick={this.handleAddWord}>Add Word</button>
+                <button 
+                  className={`button add-word ${selectedDice.length < 3 && 'disabled'}`} 
+                  onClick={this.handleAddWord}>
+                    Add Word
+                </button>
                 <button className="button" onClick={this.clearLetters}>Clear Letters</button>
               </div>
             </div>
-            <ScoreBoard words={this.state.playerList} />
+            <ScoreBoard words={playerList} />
           </div>
         )}
       </Fragment>

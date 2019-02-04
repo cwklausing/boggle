@@ -2,11 +2,11 @@
   border: 1px solid black;
   border-radius: 4px;
   cursor: pointer;
-  padding: 3px;
   background-color: #cacaca;
   display: flex;
   align-items: center;
   justify-content: center;
+  overflow: hidden;
 }
 
 .die.active {
@@ -14,7 +14,8 @@
 }
 
 .die.active .letter {
-  background-color: #64b967;
+  background-color: #c0e4ba;
+  box-shadow: 0px 15px 21px 10px #265430, 0px -15px 21px 10px #85cf87;
 }
 
 .letter {
@@ -22,8 +23,9 @@
   align-items: center;
   justify-content: center;
   background-color: #fff;
-  padding: 3px;
-  width: 75px;
-  height: 75px;
+  width: 70px;
+  height: 70px;
   text-align: center;
+  border-radius: 20px;
+  box-shadow: 0px 15px 21px 10px #696969, 0px -15px 21px 10px #fff;
 }
