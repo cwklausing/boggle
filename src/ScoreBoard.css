@@ -14,7 +14,7 @@
   display: block;
   max-height: 390px;
   width: 100%;
-  overflow: auto;
+  overflow: scroll;
 }
 
 .scoreboard thead, tbody, tfoot, tr {
